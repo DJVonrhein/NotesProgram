@@ -5,11 +5,12 @@
  > * Why is it important or interesting to you?
  >   * We believe this project will be simple enough to get us familiar with the GitHub workflow and the three chosen design patterns, but also be complex enough that will cause us to become more experienced software engineers in the           process.
  > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
- >   * [toolname](link) - Short description
+ >   * C++
+ >   * [Google Test](https://github.com/google/googletest) - Google Test is a testing framework designed to support any tests written in C++
  > * What will be the input/output of your project?
+ >   * The user will choose whether to create a new note or to edit a previously created one. Creating a note will prompt the user for a title, after which they will be able to edit the contents of the note. The output of the program wil       be a file containing the filenames of all notes created so far, as well as a file for each note, which will contain the notes taken.
  > * What are the three design patterns you will be using. For each design pattern you must:
  >   * Explain in 3 - 5 sentences why you picked this pattern and what feature you will implement with it
- > * This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
 
  > ## Phase II
  > In addition to completing the "Class Diagram" section below, you will need to 
