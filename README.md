@@ -1,5 +1,5 @@
 # CS100 Final Project: Terminal-Based Notebook 
- > Authors: \<[Mihir Jain](https://github.com/MihirJ23)\> \<[David Pilling](https://github.com/dkp-98)\> \<[Daniel Vornhein](https://github.com/DJVonrhein)\>
+  Authors: \<[Mihir Jain](https://github.com/MihirJ23)\> \<[David Pilling](https://github.com/dkp-98)\> \<[Daniel Vornhein](https://github.com/DJVonrhein)\>
 
 ## Project Description
   * Why is it important or interesting to you?
