@@ -13,16 +13,6 @@
     * The first design pattern we are thinking of using is the command design pattern. We plan to offer the user several options in terms of actions they can take. The user will be able to view, add, delete, or edit notes/notebooks, so we believe that the command pattern would be best suited to handle these actions.
     * Another design pattern that we would like to use is the strategy design pattern, We are going to use this to do various formatting options such as highlighting, spacing, , light vs dark mode viewing options, etc.
     * Our third design pattern option would be the composite design pattern. We are going to organize our notes via a parent Notebook class, which stores several Note children. The user will create a Notebook with a title and an optional description, and then begin to add Note objects to this notebook.
- > ## Phase II
- > In addition to completing the "Class Diagram" section below, you will need to 
- > * Set up your GitHub project board as a Kanban board for the project. It should have columns that map roughly to 
- >   * Backlog, TODO, In progress, In testing, Done
- >   * You can change these or add more if you'd like, but we should be able to identify at least these.
- > * There is no requirement for automation in the project board but feel free to explore those options.
- > * Create an "Epic" (note) for each feature and each design pattern and assign them to the appropriate team member. Place these in the `Backlog` column
- > * Complete your first *sprint planning* meeting to plan out the next 7 days of work.
- >   * Create smaller development tasks as issues and assign them to team members. Place these in the `Backlog` column.
- >   * These cards should represent roughly 7 days worth of development time for your team, taking you until your first meeting with the TA
 ## Class Diagram
  <img src="images/designdoc.pdf">
  > ## Phase III
