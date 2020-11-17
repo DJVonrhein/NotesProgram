@@ -15,6 +15,11 @@
     * Our third design pattern option would be the composite design pattern. We are going to organize our notes via a parent Notebook class, which stores several Note children. The user will create a Notebook with a title and an optional description, and then begin to add Note objects to this notebook.
 ## Class Diagram
  ![OMT class diagram](/OMT.png)
+ 
+ * NotebookEntry is the abstract class and parent of Notes and Notebooks(which are a collection of Notes). Notebooks are thus composite objects.
+ * Notes are going to have multiple display strategies. We hope to implement a very basic GUI (using a library) for displaying Notes, consisting of just a new window with a specific background color. The content of the Note (string text) will also have a specific color and be inserted over the window until the user escapes it. The strategy chosen dictates the color combination and more will be implemented if possible. 
+ * Lastly we chose the command pattern for the Note’s edit() function because it allows the user to undo the last edit(). We may even add this functionality for changing the title.
+
 ## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
