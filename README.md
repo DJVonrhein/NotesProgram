@@ -15,7 +15,7 @@
     * Our third design pattern option would be the composite design pattern. We are going to organize our notes via a parent Notebook class, which stores several Note children. The user will create a Notebook with a title and an optional description, and then begin to add Note objects to this notebook.
 ## Class Diagram
  <img src="images/designdoc.pdf">
- > ## Phase III
+## Phase III
  > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
  > * Before the meeting you should perform a sprint plan like you did in Phase II
  > * In the meeting with your TA you will discuss: 
