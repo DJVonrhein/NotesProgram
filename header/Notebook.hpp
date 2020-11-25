@@ -1,17 +1,16 @@
-#ifndef NOTEBOOK_HPP_
-#define NOTEBOOK_HPP_
+#ifndef __NOTEBOOK_HPP__
+#define __NOTEBOOK_HPP__
 
 #include <iostream>
 #include <string>
 #include <vector>
 #include <list>
-#include "Note.hpp"
 
 class Notebook {
 	public:
 	Notebook(string title) {}
-	void addNote(Note* );
-	void removeNote(Note* );
+	void addNote(NotebookEntry* );
+	void removeNote(NotebookEntry* );
 
 	private:
 	vector<NotebookEntry*> v;
