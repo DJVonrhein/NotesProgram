@@ -1,15 +1,16 @@
-#ifndef NOTE_HPP_
-#define NOTE_HPP_
+#ifndef __NOTE_HPP__
+#define __NOTE_HPP__
 
 #include <iostream>
 #include <vector>
 #include <list>
 #include <string>
-#include "Notebook.hpp"
+
+#include "NotebookEntry.hpp"
 
 using namespace std;
 
-class Note {
+class Note : public NotebookEntry {
 	public:
 	Note(string name) {}
 	void edit();
