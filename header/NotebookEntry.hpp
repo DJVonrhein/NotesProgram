@@ -1,16 +1,14 @@
-#ifndef NOTEBOOKENTRY_HPP_
-#define NOTEBOOKENTRY_HPP_
+#ifndef __NOTEBOOK_ENTRY_HPP__
+#define __NOTEBOOK_ENTRY_HPP__
 
 #include <iostream>
 #include <string>
 #include <vector>
-#include "Note.hpp"
-#include "Notebook.hpp"
 
 class NotebookEntry {
 	private:
-	string entry;
-	string TimeEdited;
+	string title;
+	string time_edited;
 };
 
 #endif
