@@ -5,13 +5,14 @@
 #include <vector>
 #include <list>
 #include <string>
+
 #include "NotebookEntry.hpp"
 
 using namespace std;
 
-class Note : public NotebookEntry{
+class Note : public NotebookEntry {
 	public:
-	Note(string title) {};
+	Note(string name) {}
 	void edit();
 	void revert();
 	void display();
@@ -19,7 +20,7 @@ class Note : public NotebookEntry{
 	private:
 	string text;
 	DisplayStrat* strat;
-	EditCommand* com;
+	EditCommand* comm;
 };
 
 #endif
