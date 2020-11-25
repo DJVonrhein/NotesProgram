@@ -5,19 +5,19 @@
   * Why is it important or interesting to you?
     * We believe this project will be simple enough to get us familiar with the GitHub workflow and the three chosen design patterns, but also be complex enough that will cause us to become more experienced software engineers in the           process.
   * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
-    * C++
+    * C++, CMake, googletest, and possibly WinAPI for displaying notes.
     * [Google Test](https://github.com/google/googletest) - Google Test is a testing framework designed to support any tests written in C++
   * What will be the input/output of your project?
     * The user will choose whether to create a new note or to edit a previously created one. Creating a note will prompt the user for a title, after which they will be able to edit the contents of the note. The output of the program wil       be a file containing the filenames of all notes created so far, as well as a file for each note, which will contain the notes taken.
   * What are the three design patterns you will be using?
-    * The first design pattern we are thinking of using is the command design pattern. We plan to offer the user several options in terms of actions they can take. The user will be able to view, add, delete, or edit notes/notebooks, so we believe that the command pattern would be best suited to handle these actions.
-    * Another design pattern that we would like to use is the strategy design pattern, We are going to use this to do various formatting options such as highlighting, spacing, , light vs dark mode viewing options, etc.
-    * Our third design pattern option would be the composite design pattern. We are going to organize our notes via a parent Notebook class, which stores several Note children. The user will create a Notebook with a title and an optional description, and then begin to add Note objects to this notebook.
+    * The first design pattern we are thinking of using is the command design pattern. We want to use the command design pattern for editing the text of a Note since it allows us to store the previous state of the Note. This is important in case the user makes a mistake and wants to revert to the previous edit.
+    * Another design pattern that we would like to use is the strategy design pattern. We are going to use this to implement different ways to display a Note's text. We plan on incorporating the library WinAPI to create simple text windows that contain the Note's text string, using its TextOut() function. The strategies will incorporate differing color schemes from one another.
+    * Our third design pattern option would be the composite design pattern. We are going to contain our Notes (leaf) in the data of a Notebook(composite), which stores a vector of Note pointers. The user will create a Notebook with a title and an optional description, and then begin to add Note objects to this notebook.
 ## Class Diagram
  ![OMT class diagram](/OMT.png)
  
  * NotebookEntry is the abstract class and parent of Notes and Notebooks(which are a collection of Notes). Notebooks are thus composite objects.
- * Notes are going to have multiple display strategies. We hope to implement a very basic GUI (using a library) for displaying Notes, consisting of just a new window with a specific background color. The content of the Note (string text) will also have a specific color and be inserted over the window until the user escapes it. The strategy chosen dictates the color combination and more will be implemented if possible. 
+ * Notes are going to have multiple display strategies. We hope to implement a very basic GUI (using a library) for displaying Notes, consisting of a new window with a specific background color. The content of the Note (string text) will also have a specific color and will be found in the display window until the user escapes it. The strategy chosen dictates the color combination and more will be implemented if possible. 
  * Lastly we chose the command pattern for the Note’s edit() function because it allows the user to undo the last edit(). We may even add this functionality for changing the title.
 
 ## Phase III
