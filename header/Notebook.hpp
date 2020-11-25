@@ -5,10 +5,11 @@
 #include <string>
 #include <vector>
 #include <list>
+#include "NotebookEntry.hpp"
 
-class Notebook {
+class Notebook : public NotebookEntry{
 	public:
-	Notebook(string title) {}
+	Notebook(string title) {};
 	void addNote(NotebookEntry* );
 	void removeNote(NotebookEntry* );
 
