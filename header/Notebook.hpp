@@ -4,8 +4,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include <list>
 #include "NotebookEntry.hpp"
+
+using namespace std;
 
 class Notebook : public NotebookEntry{
 	public:
