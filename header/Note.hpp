@@ -10,6 +10,9 @@
 
 using namespace std;
 
+class DisplayStrat;
+class EditCommand;
+
 class Note : public NotebookEntry {
 	public:
 	Note(string name) {}
