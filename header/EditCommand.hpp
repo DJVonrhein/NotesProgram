@@ -1,4 +1,4 @@
-#include "../Note.hpp"
+#include "Note.hpp"
 #include <iostream>
 #include <vector>
 #include <string>
@@ -9,8 +9,8 @@ class EditCommand : public Note {
     protected:
         Note* invoker;
     public:
-        EditCommand() : invoker(nullptr) { };
-        EditCommand(Note* invoker) : invoker(invoker) { };
+        EditCommand() { invoker = nullptr;  };
+        EditCommand(Note* invoker) { this->invoker = invoker;  };
         virtual void edit() = 0;
         virtual void unedit() = 0;
 };
