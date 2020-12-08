@@ -1,3 +1,6 @@
+#ifndef _EDIT_COMMAND_HPP_
+#define _EDIT_COMMAND_HPP_
+
 #include "Note.hpp"
 #include <iostream>
 #include <vector>
@@ -11,8 +14,9 @@ class EditCommand {
     protected:
         Note* invoker;
     public:
-        //EditCommand() { invoker = nullptr;  };
-        EditCommand(Note* invoker) { this->invoker = invoker;  };
+        EditCommand() { invoker = nullptr;  };
         virtual void edit() = 0;
         virtual void unedit() = 0;
 };
+
+#endif
