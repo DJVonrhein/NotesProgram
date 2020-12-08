@@ -7,8 +7,8 @@
 
 class NotebookEntry {
 	private:
-	string title;
-	string time_edited;
+	std::string title;
+	std::string time_edited;
 };
 
 #endif
