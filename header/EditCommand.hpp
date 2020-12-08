@@ -1,3 +1,6 @@
+#ifndef _EDIT_COMMAND_HPP_
+#define _EDIT_COMMAND_HPP_
+
 #include "Note.hpp"
 #include <iostream>
 #include <vector>
@@ -13,3 +16,5 @@ class EditCommand {
         virtual void edit() = 0;
         virtual void unedit() = 0;
 };
+
+#endif
