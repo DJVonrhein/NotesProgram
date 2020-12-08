@@ -5,12 +5,11 @@
 #include <stdexcept>
 #include <ctime>
 
-class EditCommand : public Note {
+class EditCommand {
     protected:
         Note* invoker;
     public:
         EditCommand() { invoker = nullptr;  };
-        EditCommand(Note* invoker) { this->invoker = invoker;  };
         virtual void edit() = 0;
         virtual void unedit() = 0;
 };
