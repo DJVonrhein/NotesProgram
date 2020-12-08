@@ -8,6 +8,8 @@
 #include <stdexcept>
 #include <ctime>
 
+class Note;
+
 class EditCommand {
     protected:
         Note* invoker;
