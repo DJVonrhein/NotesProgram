@@ -20,15 +20,6 @@
  * Notes are going to have multiple display strategies. We hope to implement a very basic GUI (using a library) for displaying Notes, consisting of a new window with a specific background color. The content of the Note (string text) will also have a specific color and will be found in the display window until the user escapes it. The strategy chosen dictates the color combination and more will be implemented if possible. 
  * Lastly we chose the command pattern for the Note’s edit() function because it allows the user to undo the last edit(). We may even add this functionality for changing the title.
 
-## Phase III
- > You will need to schedule a check-in with the TA (during lab hours or office hours). Your entire team must be present. 
- > * Before the meeting you should perform a sprint plan like you did in Phase II
- > * In the meeting with your TA you will discuss: 
- >   - How effective your last sprint was (each member should talk about what they did)
- >   - Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- >   - Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- >   - What tasks you are planning for this next sprint.
-
  > ## Final deliverable
  > All group members will give a demo to the TA during lab time. The TA will check the demo and the project GitHub repository and ask a few questions to all the team members. 
  > Before the demo, you should do the following:
