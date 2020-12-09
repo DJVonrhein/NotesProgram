@@ -20,6 +20,14 @@ class Note : public NotebookEntry {
                 this->title = name;
                 this->strat = nullptr;
         }
+	Note(string name, bool b) {
+                this->title = name;
+
+		if(b)
+		    this->strat = new DisplayWordCount();
+		else
+		    this->strat = new DisplayNoWordCount();
+        }
         virtual void edit(string);
         virtual void revert(string);
         virtual void display(string);
