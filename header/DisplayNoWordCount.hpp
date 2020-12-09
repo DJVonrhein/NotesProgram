@@ -6,21 +6,27 @@
 #include <vector>
 #include <list>
 #include "Note.hpp"
-#include <ifstream>
+#include <fstream>
 #include <cstdlib>
+#include <cstring>
 using namespace std;
 
-class DisplayWordCount : class DisplayStrat {
+//class DisplayStrat;
+
+class DisplayNoWordCount : public DisplayStrat {
     public:
-        virtual void display(string title){
+	DisplayNoWordCount() {};
+        virtual void display(string title);/*{
             ifstream fin;
             char x;
-            fin.open(c_str("../text_files/" + title + ".txt"));
+	    string file_ref = "../text_files/" + title + ".txt";
+            fin.open(file_ref.c_str());
             while(fin >> x)
                 cout << x;
 
             fin.close();
         }
+*/
 };
 
 #endif

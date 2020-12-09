@@ -1,11 +1,17 @@
 #include "../header/Notebook.hpp"
 #include "../header/Note.hpp"
 #include "../header/EditCommand.hpp"
-
+#include "../header/DisplayStrat.hpp"
+#include "../header/DisplayNoWordCount.hpp"
+#include "../header/DisplayWordCount.hpp"
+#include <string>
+#include <cstring>
 #include <cstdlib>
 #include <iostream>
 using namespace std;
 
+class DisplayWordCount;
+class DisplayNoWordCount;
 string notebook_choice_menu();
 void print_menu(string);
 
@@ -16,18 +22,48 @@ int main(){
     Notebook* myNotebook = new Notebook(NotebookName);
     int menu_choice = 0;
 
-    while(menu_choice != 5){
+    while(menu_choice != 5){					//MENU LOOP   --    ends when user presses 5 for quit
     	print_menu(NotebookName);
 
 	cin >> menu_choice;
  
-	if( menu_choice == 1){
+	if( menu_choice == 1){ //New note option
 	    cout << "\nEnter the name of the Note\n";
 	    
-	    	    
+	    string note_name;
+            getline(cin, note_name);
+
+            if(myNotebook->find(note_name)){
+                cout << "\nA Note with that name already exists!\n";
+	    }	    
+
+	    else{
+	   	cout << "\nDo you want your note to display word count? (y for yes, n for no)\n";
+
+		bool disp_word_count;
+		char x;
+		cin >> x;
+		if(x == 'y' || x == 'n'){
+		    if(x == 'y')
+		    	disp_word_count = true;
+		    else
+			disp_word_count = false;
+		    Note* myNote = new Note(note_name, disp_word_count);
+		    myNotebook->addNote(myNote);
+		   
+
+	 	    string file_ref = "cd Notefiles && vim " + note_name + ".txt";
+		    int status = system(file_ref.c_str());
+		}
+
+		else{
+		    cout << "\nNeither yes or no were chosen!\n";
+		}   
+	    }
 	}
 
-	else if( menu_choice == 2){
+	else if( menu_choice == 2){ // display option
+	    
 	    cout << "\nWhat Note do you want to display?\n";
 	    
 	    string note_name;
@@ -41,7 +77,7 @@ int main(){
 
 	}
 
-	else if(menu_choice == 3){
+	else if(menu_choice == 3){ //edit option
 	    cout << "\nWhat Note do you want to edit?\n";
 
 	    string note_name;
@@ -54,7 +90,7 @@ int main(){
                 cout << "\nThe Note doesn't exist!\n";    
 	}
 
-	else if(menu_choice == 4){
+	else if(menu_choice == 4){ //revert option
             cout << "\nWhat Note do you want to revert changes on?\n";
 
             string note_name;
@@ -67,10 +103,12 @@ int main(){
                 cout << "\nThe Note doesn't exist!\n";
         }
 
-	else if(menu_choice == 5){
+	else if(menu_choice == 5){ //quit option
 	    return 0;
 	}
-    
+
+    	else
+	    cout << "\nGive an option between 1 and 5!\n"; 
     }
     return 0;
       
