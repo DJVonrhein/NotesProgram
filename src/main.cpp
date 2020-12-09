@@ -6,9 +6,6 @@
 #include <iostream>
 using namespace std;
 
-
-
-class Notebook;
 string notebook_choice_menu();
 void print_menu(string);
 

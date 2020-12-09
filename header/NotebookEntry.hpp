@@ -6,7 +6,7 @@
 #include <vector>
 
 class NotebookEntry {
-	private:
+	protected:
 	std::string title;
 };
 

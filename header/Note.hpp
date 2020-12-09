@@ -7,24 +7,26 @@
 #include <string>
 
 #include "NotebookEntry.hpp"
-
+#include "Notebook.hpp"
 using namespace std;
 
 class DisplayStrat;
 class EditCommand;
 
 class Note : public NotebookEntry {
-	public:
-	Note(string name) {}
-	string get_title();
-	void edit();
-	void revert();
-	void display();
+        public:
+        string get_title();
+        Note(string name) {
+                this->title = name;
+                this->strat = nullptr;
+        }
+        void edit();
+        void revert();
+        void display();
 
-	private:
-	string text;
-	DisplayStrat* strat;
-	EditCommand* comm;
+        private:
+        DisplayStrat* strat;
+        EditCommand* comm;
 };
 
 #endif
