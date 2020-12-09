@@ -10,14 +10,17 @@ using namespace std;
 
 class Notebook;
 string notebook_choice_menu();
-
+void print_menu(string);
 
 int main(){
-
     cout << "Welcome to TermiNotes v1.0!\n";
+    
     string NotebookName = notebook_choice_menu();
-//    NotebookName Notebook* = 
-    cout << NotebookName << endl;
+    Notebook* myNotebook = new Notebook(NotebookName);
+
+    print_menu(NotebookName);
+
+
 	
     return 0;
       
@@ -27,13 +30,15 @@ int main(){
 
 
 
-string notebook_choice_menu(){
+string notebook_choice_menu(){ //User inputs the name to their notebook
     string user_choice;
-    string user_title;
+    string notebook_title;
     int invalid_inputs = 0;
 
     while(1){
-        cout << "To name your notebook, type \"new <title>\"!\n";
+        cout << "\nTo name your notebook, type \"new <title>\"!\n";
+	cout << "Avoid using spaces or symbols in your title. \n\n";
+
  //   cout << "If you would like to display or edit an existing note, type \"display\" or \"edit\"!\n";
         getline(cin, user_choice); 
         if(user_choice.substr(0,4) == "new "){
@@ -42,8 +47,8 @@ string notebook_choice_menu(){
 		    ++invalid_inputs;
 	    }
 	    if(invalid_inputs == 0){
-		user_title = user_choice.substr(4, user_choice.size()-4);
-		return user_title;
+		notebook_title = user_choice.substr(4, user_choice.size()-4);
+		return notebook_title;
 	    }
 	    else
 		cout << "invalid title!\n";	
@@ -54,15 +59,22 @@ string notebook_choice_menu(){
     }
 }
 
-
+/*
 int note_choice_menu(){
     
     cout << "If you would like to create a new note, type \"new <title>\"!\n";
     cout << "If you would like to display or edit an existing note, type \"display\" or \"edit\"!\n";
 
 }
+*/
 
-bool parse_choice(){
 
-
+void print_menu(string notebook_title) { //Displays the options that are available for the notebook
+	
+	cout << "\nWelcome to the " << notebook_title << " Notebook!\n"; 
+        cout << "\nChoose an option:\n";
+       	cout << "1. Create New Notebook\n";
+        cout << "2. Display Note\n";
+        cout << "3. Edit Note\n";
+        return;
 }
