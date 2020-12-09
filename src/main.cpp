@@ -70,11 +70,11 @@ int note_choice_menu(){
 
 
 void print_menu(string notebook_title) { //Displays the options that are available for the notebook
-	
 	cout << "\nWelcome to the " << notebook_title << " Notebook!\n"; 
-        cout << "\nChoose an option:\n";
-       	cout << "1. Create New Notebook\n";
-        cout << "2. Display Note\n";
-        cout << "3. Edit Note\n";
-        return;
+        cout << "Choose an option:" << endl;
+        cout << "1. Create New Notebook" << endl;
+        cout << "2. Create New Note" << endl;
+        cout << "3. Display Note" << endl;
+        cout << "4. Edit Note" << endl;
+	return;
 }
