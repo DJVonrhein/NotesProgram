@@ -1,23 +1,22 @@
 #include <iostream>
 #include "../header/Note.hpp"
+#include "../header/DisplayStrat.hpp"
+#include "../header/EditCommand.hpp"
 
 using namespace std;
 
-void Note::edit() {
-        string newPhrase;
-        cout << "Please enter a new phrase to be saved! " << endl;
-        getline(cin, newPhrase);
-        this->title = newPhrase;
+void Note::edit(string title) {
+	comm->edit(title);
 }
 
-void Note::revert() {
-        comm->unedit();
+void Note::revert(string title) {
+        comm->unedit(title);
 }
 
-void Note::display() {
-        cout << this->title << endl;
+void Note::display(string title) {
+        strat->display(title);
 }
 
-string Note::return_title() {
-        return this->title;
-}
+//string Note::return_title() {
+//        return this->title;
+//}

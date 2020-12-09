@@ -14,12 +14,12 @@ class TextEditCommand : public EditCommand {
 
 	TextEditCommand(Note* invoker) { this->invoker = invoker; };
 
-	virtual void edit() {
+	virtual void edit(string title) {
 	    std::cout << "FIXME: implement edit function" << std::endl;
 	    return;
 	}
 
-	virtual void unedit() {
+	virtual void unedit(string title) {
 	    std::cout << "FIXME: implement unedit function" << std::endl;
 	    return;
 	}

@@ -6,10 +6,11 @@
 #include <vector>
 #include <list>
 #include "Note.hpp"
+using namespace std;
 
 class DisplayStrat {
 	public:
-	virtual void display() = 0;
+	virtual void display(string title) = 0;
 };
 
 #endif

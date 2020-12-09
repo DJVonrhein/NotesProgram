@@ -34,7 +34,7 @@ int main(){
 	    getline(cin, note_name);
 
 	    if(myNotebook->find(note_name))
-		myNotebook->find(note_name)->display();
+		myNotebook->find(note_name)->display(note_name);
 
 	    else
 		cout << "\nThe Note doesn't exist!\n";
@@ -48,7 +48,7 @@ int main(){
             getline(cin, note_name);
 
             if(myNotebook->find(note_name))
-                myNotebook->find(note_name)->edit();
+                myNotebook->find(note_name)->edit(note_name);
 
             else
                 cout << "\nThe Note doesn't exist!\n";    
@@ -61,7 +61,7 @@ int main(){
             getline(cin, note_name);
 
             if(myNotebook->find(note_name))
-                myNotebook->find(note_name)->revert();
+                myNotebook->find(note_name)->revert(note_name);
 
             else
                 cout << "\nThe Note doesn't exist!\n";

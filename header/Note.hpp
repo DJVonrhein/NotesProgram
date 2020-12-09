@@ -15,14 +15,14 @@ class EditCommand;
 
 class Note : public NotebookEntry {
         public:
-        string get_title();
+        //string get_title();
         Note(string name) {
                 this->title = name;
                 this->strat = nullptr;
         }
-        void edit();
-        void revert();
-        void display();
+        virtual void edit(string);
+        virtual void revert(string);
+        virtual void display(string);
 
         private:
         DisplayStrat* strat;

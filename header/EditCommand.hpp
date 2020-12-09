@@ -7,7 +7,7 @@
 #include <string>
 #include <stdexcept>
 #include <ctime>
-
+using namespace std;
 class Note;
 
 class EditCommand {
@@ -15,8 +15,8 @@ class EditCommand {
         Note* invoker;
     public:
         EditCommand() { invoker = nullptr;  };
-        virtual void edit() = 0;
-        virtual void unedit() = 0;
+        virtual void edit(string) = 0;
+        virtual void unedit(string) = 0;
 };
 
 #endif
