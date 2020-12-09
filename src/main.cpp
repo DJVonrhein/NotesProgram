@@ -17,11 +17,64 @@ int main(){
     
     string NotebookName = notebook_choice_menu();
     Notebook* myNotebook = new Notebook(NotebookName);
+    int menu_choice = 0;
 
-    print_menu(NotebookName);
+    while(menu_choice != 5){
+    	print_menu(NotebookName);
 
+	cin >> menu_choice;
+ 
+	if( menu_choice == 1){
+	    cout << "\nEnter the name of the Note\n";
+	    
+	    	    
+	}
 
-	
+	else if( menu_choice == 2){
+	    cout << "\nWhat Note do you want to display?\n";
+	    
+	    string note_name;
+	    getline(cin, note_name);
+
+	    if(myNotebook->find(note_name))
+		myNotebook->find(note_name)->display();
+
+	    else
+		cout << "\nThe Note doesn't exist!\n";
+
+	}
+
+	else if(menu_choice == 3){
+	    cout << "\nWhat Note do you want to edit?\n";
+
+	    string note_name;
+            getline(cin, note_name);
+
+            if(myNotebook->find(note_name))
+                myNotebook->find(note_name)->edit();
+
+            else
+                cout << "\nThe Note doesn't exist!\n";    
+	}
+
+	else if(menu_choice == 4){
+            cout << "\nWhat Note do you want to revert changes on?\n";
+
+            string note_name;
+            getline(cin, note_name);
+
+            if(myNotebook->find(note_name))
+                myNotebook->find(note_name)->revert();
+
+            else
+                cout << "\nThe Note doesn't exist!\n";
+        }
+
+	else if(menu_choice == 5){
+	    return 0;
+	}
+    
+    }
     return 0;
       
 }
