@@ -5,6 +5,18 @@
 
 using namespace std;
 
+
+Note::Note(string name, bool b) {
+    this->title = name;
+
+    if(b){
+        this->strat = new DisplayWordCount();
+    }
+    else{
+        this->strat = new DisplayNoWordCount();
+    }
+}
+
 void Note::edit(string title) {
 	comm->edit(title);
 }

@@ -1,11 +1,17 @@
 #include "../header/Notebook.hpp"
 #include "../header/Note.hpp"
 #include "../header/EditCommand.hpp"
-
+#include "../header/DisplayStrat.hpp"
+#include "../header/DisplayNoWordCount.hpp"
+#include "../header/DisplayWordCount.hpp"
+#include <string>
+#include <cstring>
 #include <cstdlib>
 #include <iostream>
 using namespace std;
 
+class DisplayWordCount;
+class DisplayNoWordCount;
 string notebook_choice_menu();
 void print_menu(string);
 
@@ -16,7 +22,7 @@ int main(){
     Notebook* myNotebook = new Notebook(NotebookName);
     int menu_choice = 0;
 
-    while(menu_choice != 5){
+    while(menu_choice != 5){					//MENU LOOP   --    ends when user presses 5 for quit
     	print_menu(NotebookName);
 
 	cin >> menu_choice;
@@ -37,20 +43,19 @@ int main(){
 		bool disp_word_count;
 		char x;
 		cin >> x;
-		if(x == 'y'){
-		    disp_word_count = true;
-		
+		if(x == 'y' || x == 'n'){
+		    if(x == 'y')
+		    	disp_word_count = true;
+		    else
+			disp_word_count = false;
 		    Note* myNote = new Note(note_name, disp_word_count);
 		    myNotebook->addNote(myNote);
-		    int status = system(c_str("cd Notefiles && vim " + note_name + ".txt"));
+		   
+
+	 	    string file_ref = "cd Notefiles && vim " + note_name + ".txt";
+		    int status = system(file_ref.c_str());
 		}
-		else if(x == 'n'){
-		    disp_word_count = false;
-		
-		    Note* myNote = new Note(note_name, disp_word_count);
-		    myNotebook->addNote(myNote);
-		    int status = system(c_str("cd Notefiles && vim " + note_name + ".txt"));
-	 	}
+
 		else{
 		    cout << "\nNeither yes or no were chosen!\n";
 		}   

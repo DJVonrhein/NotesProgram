@@ -10,6 +10,7 @@ using namespace std;
 
 class DisplayStrat {
 	public:
+	DisplayStrat() {};
 	virtual void display(string title) = 0;
 };
 

@@ -7,18 +7,24 @@
 #include <vector>
 #include <list>
 #include "Note.hpp"
-#include <ifstream>
+#include <fstream>
 #include <cstdlib>
+#include <cstring>
 using namespace std;
 
-class DisplayWordCount : class DisplayStrat {
+//class DisplayStrat;
+
+class DisplayWordCount : public DisplayStrat {
     public:
-	virtual void display(string title){
+	DisplayWordCount() {} ;
+	virtual void display(string title);
+/*	{
 	    ifstream fin;
 	    char x;
 	    int char_count = 0;
 	    int word_count = 0;
-	    fin.open(c_str("../text_files/" + title + ".txt"));
+	    string file_ref = "../text_files/" + title + ".txt";
+	    fin.open(file_ref.c_str());
 	    
 	    while(fin >> x){
 		cout << x;
@@ -31,6 +37,7 @@ class DisplayWordCount : class DisplayStrat {
 	    cout << "\nCharacter Count: " << char_count << "\n";
 	    fin.close(); 
 	}
+*/
 };
 
 #endif
