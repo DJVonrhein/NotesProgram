@@ -3,19 +3,21 @@
 
 using namespace std;
 
-void Notebook::addNote(Note* newNote) {
+void Notebook::addNote(NotebookEntry* newNote) {
         v.push_back(newNote);
 }
-
-void Notebook::removeNote(Note* newNote) {
+/*
+void Notebook::removeNote(string title) {
         for (unsigned i = 0; i < v.size(); ++i) {
-                if (v.at(i)->get_title() == newNote->get_title()) {
-                        v.erase(find(a.begin(), a.end(), a.at(i)));
+                if (v.at(i)->get_title() == title) {
+                       // v.erase(find(a.begin(), a.end(), a.at(i)))
+                       v.at(i).erase();
                 }
         }
 }
-        
-Note* Notebook::find(string name) {
+*/
+       
+NotebookEntry* Notebook::find(string name) {
         for (unsigned int i = 0; i < v.size(); ++i) {
                  if (v.at(i)->get_title() == name) {
                         return v.at(i);
