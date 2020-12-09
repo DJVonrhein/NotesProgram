@@ -21,13 +21,44 @@ int main(){
 
 	cin >> menu_choice;
  
-	if( menu_choice == 1){
+	if( menu_choice == 1){ //New note option
 	    cout << "\nEnter the name of the Note\n";
 	    
-	    	    
+	    string note_name;
+            getline(cin, note_name);
+
+            if(myNotebook->find(note_name)){
+                cout << "\nA Note with that name already exists!\n";
+	    }	    
+
+	    else{
+	   	cout << "\nDo you want your note to display word count? (y for yes, n for no)\n";
+
+		bool disp_word_count;
+		char x;
+		cin >> x;
+		if(x == 'y'){
+		    disp_word_count = true;
+		
+		    Note* myNote = new Note(note_name, disp_word_count);
+		    myNotebook->addNote(myNote);
+		    int status = system(c_str("cd Notefiles && vim " + note_name + ".txt"));
+		}
+		else if(x == 'n'){
+		    disp_word_count = false;
+		
+		    Note* myNote = new Note(note_name, disp_word_count);
+		    myNotebook->addNote(myNote);
+		    int status = system(c_str("cd Notefiles && vim " + note_name + ".txt"));
+	 	}
+		else{
+		    cout << "\nNeither yes or no were chosen!\n";
+		}   
+	    }
 	}
 
-	else if( menu_choice == 2){
+	else if( menu_choice == 2){ // display option
+	    
 	    cout << "\nWhat Note do you want to display?\n";
 	    
 	    string note_name;
@@ -41,7 +72,7 @@ int main(){
 
 	}
 
-	else if(menu_choice == 3){
+	else if(menu_choice == 3){ //edit option
 	    cout << "\nWhat Note do you want to edit?\n";
 
 	    string note_name;
@@ -54,7 +85,7 @@ int main(){
                 cout << "\nThe Note doesn't exist!\n";    
 	}
 
-	else if(menu_choice == 4){
+	else if(menu_choice == 4){ //revert option
             cout << "\nWhat Note do you want to revert changes on?\n";
 
             string note_name;
@@ -67,10 +98,12 @@ int main(){
                 cout << "\nThe Note doesn't exist!\n";
         }
 
-	else if(menu_choice == 5){
+	else if(menu_choice == 5){ //quit option
 	    return 0;
 	}
-    
+
+    	else
+	    cout << "\nGive an option between 1 and 5!\n"; 
     }
     return 0;
       
