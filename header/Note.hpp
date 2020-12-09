@@ -16,6 +16,7 @@ class EditCommand;
 class Note : public NotebookEntry {
 	public:
 	Note(string name) {}
+	string get_title();
 	void edit();
 	void revert();
 	void display();
