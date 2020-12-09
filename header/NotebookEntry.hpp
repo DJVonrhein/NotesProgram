@@ -8,7 +8,6 @@
 class NotebookEntry {
 	private:
 	std::string title;
-	std::string time_edited;
 };
 
 #endif
