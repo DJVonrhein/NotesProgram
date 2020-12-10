@@ -15,7 +15,7 @@ using namespace std;
 
 class DisplayNoWordCount : public DisplayStrat {
     public:
-	DisplayNoWordCount() {};
+	DisplayNoWordCount();
         virtual void display(string title);/*{
             ifstream fin;
             char x;
