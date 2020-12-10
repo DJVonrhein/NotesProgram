@@ -2,18 +2,21 @@
 #include "../header/Note.hpp"
 #include "../header/EditCommand.hpp"
 #include "../header/DisplayStrat.hpp"
-#include "../header/DisplayNoWordCount.hpp"
-#include "../header/DisplayWordCount.hpp"
+//#include "../header/DisplayNoWordCount.hpp"
+//#include "../header/DisplayWordCount.hpp"
 #include <string>
 #include <cstring>
 #include <cstdlib>
+#include <ostream>
+#include <fstream>
 #include <iostream>
 using namespace std;
 
-class DisplayWordCount;
-class DisplayNoWordCount;
+//class DisplayWordCount;
+//class DisplayNoWordCount;
 string notebook_choice_menu();
 void print_menu(string);
+void temp_display_word_count(string);
 
 int main(){
     cout << "Welcome to TermiNotes v1.0!\n";
@@ -31,8 +34,9 @@ int main(){
 	    cout << "\nEnter the name of the Note\n";
 	    
 	    string note_name;
+	    cin.ignore();
             getline(cin, note_name);
-
+		
             if(myNotebook->find(note_name)){
                 cout << "\nA Note with that name already exists!\n";
 	    }	    
@@ -48,7 +52,8 @@ int main(){
 		    	disp_word_count = true;
 		    else
 			disp_word_count = false;
-		    Note* myNote = new Note(note_name, disp_word_count);
+		    Note* myNote = new Note(note_name);
+
 		    myNotebook->addNote(myNote);
 		   
 
@@ -67,10 +72,12 @@ int main(){
 	    cout << "\nWhat Note do you want to display?\n";
 	    
 	    string note_name;
+	    cin.ignore();
 	    getline(cin, note_name);
 
 	    if(myNotebook->find(note_name))
-		myNotebook->find(note_name)->display(note_name);
+		temp_display_word_count(note_name);	
+//	myNotebook->find(note_name)->display(note_name);
 
 	    else
 		cout << "\nThe Note doesn't exist!\n";
@@ -81,7 +88,8 @@ int main(){
 	    cout << "\nWhat Note do you want to edit?\n";
 
 	    string note_name;
-            getline(cin, note_name);
+            cin.ignore();
+	    getline(cin, note_name);
 
             if(myNotebook->find(note_name))
                 myNotebook->find(note_name)->edit(note_name);
@@ -94,7 +102,8 @@ int main(){
             cout << "\nWhat Note do you want to revert changes on?\n";
 
             string note_name;
-            getline(cin, note_name);
+            cin.ignore();
+	    getline(cin, note_name);
 
             if(myNotebook->find(note_name))
                 myNotebook->find(note_name)->revert(note_name);
@@ -165,4 +174,30 @@ void print_menu(string notebook_title) { //Displays the options that are availab
         cout << "3. Edit Note" << endl;
 	cout << "4. Quit" << endl;
 	return;
+}
+
+
+
+void temp_display_word_count(string title) {
+    	    ifstream fin;
+	    fin.unsetf(ios_base::skipws);
+            char x;
+            int char_count = 0;
+            int word_count = 0;
+            string file_ref = "Notefiles/" + title + ".txt";
+            fin.open(file_ref.c_str());
+            
+            while(fin >> x){
+                cout << x;
+		if(x > 32 &&  x < 127)
+                    char_count++;
+                
+                else if( x == 32  )
+                    word_count++;   
+            }
+
+	    word_count++;
+            cout << "\nWord Count: " << word_count << "\n";
+            cout << "\nCharacter Count: " << char_count << "\n";
+            fin.close(); 
 }

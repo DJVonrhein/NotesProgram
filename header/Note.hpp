@@ -7,15 +7,15 @@
 #include <string>
 #include "DisplayStrat.hpp"
 #include "EditCommand.hpp"
-#include "DisplayNoWordCount.hpp"
-#include "DisplayWordCount.hpp"
+//#include "DisplayNoWordCount.hpp"
+//#include "DisplayWordCount.hpp"
 #include "NotebookEntry.hpp"
 #include "Notebook.hpp"
 using namespace std;
 
 class DisplayStrat;
-class DisplayNoWordCount;
-class DisplayWordCount;
+//class DisplayNoWordCount;
+//class DisplayWordCount;
 class EditCommand;
 
 class Note : public NotebookEntry {
@@ -25,7 +25,7 @@ class Note : public NotebookEntry {
                 this->title = name;
                 this->strat = nullptr;
         }
-	*/Note(string, bool); 
+	*/Note(string); 
           /*      this->title = name;
 
 		if(b){
