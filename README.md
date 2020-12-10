@@ -33,7 +33,13 @@
  * The menu displaying every time, along with the up-to-down text display, ensures a simple user interface and that the app stays true to its purpose.
  ## Installation/Usage
  > Instructions on installing and running your application
- > * You download the zip file and save it to your workplace. Make sure to run your terminal from that workspace (putty, vscode, etc) and do the normal process of running a file (g++ all cpp files, ./a.out).
+ * git clone https://github.com/cs100/final-project-mjain010-dvonr001-dpill001.git
+ * git submodule update --init --recursive
+ * cmake3 .
+ * make
+ * ./test (to run unit tests)
+ * g++ main.cpp Note.cpp Notebook.cpp
+ * ./a.out (to run application)
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- 
+ * We have a variety of unit tests that test various member functions used in our program such as get_title() and the constructors. We made sure to test all the possible inputs that the user can enter to ensure functionality.
