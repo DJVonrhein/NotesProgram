@@ -1,4 +1,4 @@
-#include "../gtest/gtest.h"
+#include "gtest/gtest.h"
 //files to include will go here
 
 int main(int argc, char** argv) {
