@@ -29,7 +29,8 @@ class TextEditCommand : public EditCommand {
 	    }
 	    string title = n->get_title();
 	    string command = "cd Notefiles/ && rm " + title + ".txt && mv state" + title + ".txt " + title + ".txt";
-	    int status = system(command.c_str()); 
+	    int status = system(command.c_str());
+	    this->can_revert = false; 
 	}
     
 };
