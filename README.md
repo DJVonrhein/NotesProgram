@@ -28,9 +28,12 @@
  ## Screenshots
  > Screenshots of the input/output after running your application
  ![quit input](/screenshot1.png)
- > The image above shows how to quit the program. The menu options only extend from 1-4; if it is 4 or above it will quit the program. The program also shows how our program will return an error if the user fails to provide a valid name for the notebook (new <name>).
+ * The image above shows how to quit the program. The menu options only extend from 1-4; if it is 4 or above it will quit the program. The program also shows how our program will return an error if the user fails to provide a valid name for the notebook (new <name>).
+ * The image above shows various aspects of the program running. For example, we have an option where you make a new Note object within the Notebook and vim edit the txt file that is generated. From there you can select an option displayed in the menu that counts the number of words and characters in the txt file, much like what you use in Google Docs. 
+ * The menu displaying every time, along with the up-to-down text display, ensures a simple user interface and that the app stays true to its purpose.
  ## Installation/Usage
  > Instructions on installing and running your application
+ > * You download the zip file and save it to your workplace. Make sure to run your terminal from that workspace (putty, vscode, etc) and do the normal process of running a file (g++ all cpp files, ./a.out).
  ## Testing
  > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
  
