@@ -9,20 +9,29 @@
 #include "EditCommand.hpp"
 
 class TextEditCommand : public EditCommand {
+    private:
+        bool can_revert;
+
     public:
-	TextEditCommand() { };
+	TextEditCommand() {can_revert = false; };
 
-	TextEditCommand(Note* invoker) { this->invoker = invoker; };
-
-	virtual void edit(string title) {
-	    std::cout << "FIXME: implement edit function" << std::endl;
-	    return;
+	virtual void edit(NotebookEntry* n) {
+	    string title = n->get_title();
+	    string command = "cd Notefiles/ && cp " + title + ".txt state" + title + ".txt && vim " + title + ".txt";	
+	    int status = system(command.c_str());
+	    this->can_revert = true;
 	}
 
-	virtual void unedit(string title) {
-	    std::cout << "FIXME: implement unedit function" << std::endl;
-	    return;
+	virtual void unedit(NotebookEntry* n) {
+	    if(this->can_revert == false){
+		cout << "\nYou have to edit before you can revert!\n";
+		return;
+	    }
+	    string title = n->get_title();
+	    string command = "cd Notefiles/ && rm " + title + ".txt && mv state" + title + ".txt " + title + ".txt";
+	    int status = system(command.c_str()); 
 	}
+    
 };
 
 #endif

@@ -5,15 +5,15 @@
 #include <string>
 #include <vector>
 #include <list>
-#include "Note.hpp"
+#include "NotebookEntry.hpp"
 using namespace std;
 
-class Note;
+class NotebookEntry;
 
 class DisplayStrat {
 	public:
 	DisplayStrat() {};
-	virtual void display(string title) = 0;
+	virtual void display(NotebookEntry* ) = 0;
 };
 
 #endif

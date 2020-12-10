@@ -12,13 +12,13 @@ class NotebookEntry;
 class Note;
 class Notebook : public NotebookEntry{
 	public:
-	Notebook(string title) {};
+	Notebook(string title) {this->title = title;};
 	void addNote(NotebookEntry* newNote);
 	NotebookEntry* find(string title);
 
-	virtual void edit(string title){ return; };
-	virtual void revert(string title){ return; };
-	virtual void display(string title){ return; };
+	virtual void edit(){ return; };
+	virtual void revert(){ return; };
+	virtual void display(){ return; };
 
 	private:
 	vector<NotebookEntry*> v;

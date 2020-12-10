@@ -12,9 +12,9 @@ class NotebookEntry {
 
 	public:
 	string get_title(){ return title; }
-	virtual void edit(string) = 0;
-	virtual void revert(string) = 0;
-	virtual void display(string) = 0; 
+	virtual void edit() = 0;
+	virtual void revert() = 0;
+	virtual void display() = 0; 
 };
 
 #endif
