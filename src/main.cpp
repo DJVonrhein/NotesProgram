@@ -2,8 +2,8 @@
 #include "../header/Note.hpp"
 #include "../header/EditCommand.hpp"
 #include "../header/DisplayStrat.hpp"
-//#include "../header/DisplayNoWordCount.hpp"
-//#include "../header/DisplayWordCount.hpp"
+#include "../header/DisplayNoWordCount.hpp"
+#include "../header/DisplayWordCount.hpp"
 #include <string>
 #include <cstring>
 #include <cstdlib>
@@ -12,8 +12,8 @@
 #include <iostream>
 using namespace std;
 
-//class DisplayWordCount;
-//class DisplayNoWordCount;
+class DisplayWordCount;
+class DisplayNoWordCount;
 string notebook_choice_menu();
 void print_menu(string);
 void temp_display_word_count(string);
@@ -55,12 +55,17 @@ int main(){
 		    else
 			disp_word_count = false;
 		    Note* myNote = new Note(note_name);
+		
+		    if(disp_word_count)
+		    	myNote->set_display(new DisplayWordCount());
+		    else
+		    	myNote->set_display(new DisplayNoWordCount());
+		
+			myNotebook->addNote(myNote);
+			   
 
-		    myNotebook->addNote(myNote);
-		   
-
-	 	    string file_ref = "cd Notefiles && vim " + note_name + ".txt";
-		    int status = system(file_ref.c_str());
+	 	    	string file_ref = "cd Notefiles && vim " + note_name + ".txt";
+		    	int status = system(file_ref.c_str());
 		}
 
 		else{
@@ -78,8 +83,7 @@ int main(){
 	    getline(cin, note_name);
 
 	    if(myNotebook->find(note_name))
-		temp_display_word_count(note_name);	
-//	myNotebook->find(note_name)->display(note_name);
+		myNotebook->find(note_name)->display();
 
 	    else
 		cout << "\nThe Note doesn't exist!\n";
@@ -94,8 +98,7 @@ int main(){
 	    getline(cin, note_name);
 
             if(myNotebook->find(note_name))
-		temp_edit_function(note_name);
-//                myNotebook->find(note_name)->edit(note_name);
+                myNotebook->find(note_name)->edit();
 
             else
                 cout << "\nThe Note doesn't exist!\n";    
@@ -109,8 +112,7 @@ int main(){
 	    getline(cin, note_name);
 
             if(myNotebook->find(note_name))
-		 temp_unedit_function(note_name);
-//               myNotebook->find(note_name)->revert(note_name);
+                 myNotebook->find(note_name)->revert();
 
             else
                 cout << "\nThe Note doesn't exist!\n";
@@ -160,61 +162,16 @@ string notebook_choice_menu(){ //User inputs the name to their notebook
     }
 }
 
-/*
-int note_choice_menu(){
-    
-    cout << "If you would like to create a new note, type \"new <title>\"!\n";
-    cout << "If you would like to display or edit an existing note, type \"display\" or \"edit\"!\n";
-
-}
-*/
 
 
 void print_menu(string notebook_title) { //Displays the options that are available for the notebook
 	cout << "\nWelcome to the " << notebook_title << " Notebook!\n"; 
         cout << "Choose an option:" << endl;
-        cout << "1. Create New Note" << endl;
-        cout << "2. Display Note" << endl;
-        cout << "3. Edit Note" << endl;
-	cout << "4. Revert Note" << endl;
+        cout << "1. Create a New Note" << endl;
+        cout << "2. Display a Note" << endl;
+        cout << "3. Edit a Note" << endl;
+	cout << "4. Revert Last Change on a Note" << endl;
 	cout << "5. Quit" << endl;
 	return;
 }
 
-
-
-void temp_display_word_count(string title) {
-    	    ifstream fin;
-	    fin.unsetf(ios_base::skipws);
-            char x;
-            int char_count = 0;
-            int word_count = 0;
-            string file_ref = "Notefiles/" + title + ".txt";
-            fin.open(file_ref.c_str());
-            
-            while(fin >> x){
-                cout << x;
-		if(x > 32 &&  x < 127)
-                    char_count++;
-                
-                else if( x == 32  )
-                    word_count++;   
-            }
-
-	    word_count++;
-            cout << "\nWord Count: " << word_count << "\n";
-            cout << "\nCharacter Count: " << char_count << "\n";
-            fin.close(); 
-}
-
-void temp_edit_function(string title) {
-
-	string command = "cd Notefiles/ && cp " + title + ".txt state" + title + ".txt && vim " + title + ".txt";	
-	int status = system(command.c_str());
-
-}
-
-void temp_unedit_function(string title) {
-	string command = "cd Notefiles/ && rm " + title + ".txt && mv state" + title + ".txt " + title + ".txt";
-	int status = system(command.c_str()); 
-}
