@@ -17,6 +17,8 @@ using namespace std;
 string notebook_choice_menu();
 void print_menu(string);
 void temp_display_word_count(string);
+void temp_unedit_function(string);
+void temp_edit_function(string);
 
 int main(){
     cout << "Welcome to TermiNotes v1.0!\n";
@@ -92,7 +94,8 @@ int main(){
 	    getline(cin, note_name);
 
             if(myNotebook->find(note_name))
-                myNotebook->find(note_name)->edit(note_name);
+		temp_edit_function(note_name);
+//                myNotebook->find(note_name)->edit(note_name);
 
             else
                 cout << "\nThe Note doesn't exist!\n";    
@@ -106,7 +109,8 @@ int main(){
 	    getline(cin, note_name);
 
             if(myNotebook->find(note_name))
-                myNotebook->find(note_name)->revert(note_name);
+		 temp_unedit_function(note_name);
+//               myNotebook->find(note_name)->revert(note_name);
 
             else
                 cout << "\nThe Note doesn't exist!\n";
@@ -172,7 +176,8 @@ void print_menu(string notebook_title) { //Displays the options that are availab
         cout << "1. Create New Note" << endl;
         cout << "2. Display Note" << endl;
         cout << "3. Edit Note" << endl;
-	cout << "4. Quit" << endl;
+	cout << "4. Revert Note" << endl;
+	cout << "5. Quit" << endl;
 	return;
 }
 
@@ -200,4 +205,16 @@ void temp_display_word_count(string title) {
             cout << "\nWord Count: " << word_count << "\n";
             cout << "\nCharacter Count: " << char_count << "\n";
             fin.close(); 
+}
+
+void temp_edit_function(string title) {
+
+	string command = "cd Notefiles/ && cp " + title + ".txt state" + title + ".txt && vim " + title + ".txt";	
+	int status = system(command.c_str());
+
+}
+
+void temp_unedit_function(string title) {
+	string command = "cd Notefiles/ && rm " + title + ".txt && mv state" + title + ".txt " + title + ".txt";
+	int status = system(command.c_str()); 
 }
