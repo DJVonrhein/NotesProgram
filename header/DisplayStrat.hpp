@@ -8,6 +8,8 @@
 #include "Note.hpp"
 using namespace std;
 
+class Note;
+
 class DisplayStrat {
 	public:
 	DisplayStrat() {};

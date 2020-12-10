@@ -2,19 +2,14 @@
 #include "../header/Note.hpp"
 #include "../header/DisplayStrat.hpp"
 #include "../header/EditCommand.hpp"
+//#include "../header/DisplayWordCount.hpp"
+//#include "../header/DisplayNoWordCount.hpp"
 
 using namespace std;
 
 
-Note::Note(string name, bool b) {
+Note::Note(string name) {
     this->title = name;
-
-    if(b){
-        this->strat = new DisplayWordCount();
-    }
-    else{
-        this->strat = new DisplayNoWordCount();
-    }
 }
 
 void Note::edit(string title) {

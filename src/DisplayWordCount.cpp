@@ -1,5 +1,8 @@
 #include "../header/DisplayWordCount.hpp"
 
+DisplayWordCount::DisplayWordCount(){
+
+}
 
 void DisplayWordCount::display(string title){
             ifstream fin;

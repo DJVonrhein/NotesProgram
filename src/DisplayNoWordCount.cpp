@@ -1,6 +1,7 @@
 #include "../header/DisplayNoWordCount.hpp"
 
-
+DisplayNoWordCount::DisplayNoWordCount(){
+}
 
 void DisplayNoWordCount::display(string title){
             ifstream fin;

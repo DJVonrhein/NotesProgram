@@ -16,7 +16,7 @@ using namespace std;
 
 class DisplayWordCount : public DisplayStrat {
     public:
-	DisplayWordCount() {} ;
+	DisplayWordCount();
 	virtual void display(string title);
 /*	{
 	    ifstream fin;
