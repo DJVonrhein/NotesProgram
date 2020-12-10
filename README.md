@@ -27,6 +27,8 @@
  > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Kanban board. 
  ## Screenshots
  > Screenshots of the input/output after running your application
+ ![quit input](/screenshot1.png)
+ > The image above shows how to quit the program. The menu options only extend from 1-4; if it is 4 or above it will quit the program. The program also shows how our program will return an error if the user fails to provide a valid name for the notebook (new <name>).
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing
