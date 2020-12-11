@@ -10,7 +10,7 @@ void DisplayWordCount::display(NotebookEntry* n){
             char x;
             int char_count = 0;
             int word_count = 0;
-            string file_ref = "Notefiles/" + n->get_title() + ".txt";
+            string file_ref = "src/Notefiles/" + n->get_title() + ".txt";
             fin.open(file_ref.c_str());
 
             while(fin >> x){

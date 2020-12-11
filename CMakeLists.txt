@@ -5,6 +5,8 @@ ADD_SUBDIRECTORY(googletest)
 
 SET(CMAKE_CXX_STANDARD 11)
 
+list(REMOVE_ITEM src/Notefiles/ "test.txt")
+
 ADD_EXECUTABLE(main
     src/main.cpp
     src/Note.cpp
@@ -15,6 +17,10 @@ ADD_EXECUTABLE(main
 
 ADD_EXECUTABLE(test
     src/unit_test.cpp
+    src/Note.cpp
+    src/Notebook.cpp
+    src/DisplayWordCount.cpp
+    src/DisplayNoWordCount.cpp
 )
 
 TARGET_LINK_LIBRARIES(test gtest)
