@@ -14,7 +14,7 @@
     * Another design pattern that we use is the strategy pattern. We implemented different strategies for displaying a note - one that displays the character count and word count when displaying a note, and one that doesn't.
     * Our third design pattern option would be the composite design pattern. We are going to contain our Notes (leaf) in the data of a Notebook(composite), which stores a vector of Note pointers. The user will create a Notebook with a title and an optional description, and then begin to add Note objects to this notebook.
 ## Class Diagram
- ![OMT class diagram](/OMT.png)
+ ![OMT class diagram](/images/OMT.png)
  
  * NotebookEntry is the abstract class and parent of Notes and Notebooks(which are a collection of Notes). Notebooks are thus composite objects.
  * Notes are going to have multiple display strategies. One display strategy shows the user a note's character count and word count, while the other will display no additional information.
@@ -22,13 +22,13 @@
 
  ## Screenshots
  > Screenshots of the input/output after running your application
- ![quit input](/images/main.png)
- ![quit input](/images/beginning.png) 
- ![quit input](/images/screenshot5.png) 
- ![quit input](/images/screenshot4.png)  
- ![quit input](/images/NoteRevert.png) 
- ![quit input](/images/NoteEdit.png)
- ![quit input](/images/quit.png)
+ ![Example Program](/images/main.png)
+ ![Example Program](/images/beginning.png) 
+ ![Example Program](/images/screenshot5.png) 
+ ![Example Program](/images/screenshot4.png)  
+ ![Example Program](/images/NoteRevert.png) 
+ ![Example Program](/images/NoteEdit.png)
+ ![Example Program](/images/quit.png)
  * The image above shows how to quit the program. The user interacts with the menu by typing a choice from 1-5; if it is 5 or above it will quit the program, and any other character will not do anything. The program also shows how our program will return an error if the user fails to provide a valid name for the notebook (new <name>).
  * The image above shows various aspects of the program running. For example, we have an option where you make a new Note object within the Notebook and vim edit the txt file that is generated. From there you can select an option displayed in the menu that counts the number of words and characters in the txt file, much like what you use in Google Docs. 
  * The menu displaying every time, along with the up-to-down text display, ensures a simple user interface and that the app stays true to its purpose.
