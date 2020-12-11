@@ -15,7 +15,7 @@ class Notebook : public NotebookEntry{
 	Notebook(string title) {this->title = title;};
 	void addNote(NotebookEntry* newNote);
 	NotebookEntry* find(string title);
-
+	int get_size();
 	virtual void edit(){ return; };
 	virtual void revert(){ return; };
 	virtual void display(){ return; };

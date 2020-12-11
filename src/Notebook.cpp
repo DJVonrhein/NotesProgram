@@ -4,7 +4,7 @@
 using namespace std;
 
 void Notebook::addNote(NotebookEntry* newNote) {
-        v.push_back(newNote);
+        this->v.push_back(newNote);
 }
 /*
 void Notebook::removeNote(string title) {
@@ -16,7 +16,11 @@ void Notebook::removeNote(string title) {
         }
 }
 */
-       
+
+int Notebook::get_size() {
+	return this->v.size();
+}
+      
 NotebookEntry* Notebook::find(string name) {
         for (unsigned int i = 0; i < v.size(); ++i) {
                  if (v.at(i)->get_title() == name) {
