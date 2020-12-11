@@ -32,14 +32,11 @@
  * The image above shows various aspects of the program running. For example, we have an option where you make a new Note object within the Notebook and vim edit the txt file that is generated. From there you can select an option displayed in the menu that counts the number of words and characters in the txt file, much like what you use in Google Docs. 
  * The menu displaying every time, along with the up-to-down text display, ensures a simple user interface and that the app stays true to its purpose.
  ## Installation/Usage
- > Instructions on installing and running your application
- * git clone https://github.com/cs100/final-project-mjain010-dvonr001-dpill001.git
- * git submodule update --init --recursive
- * cmake3 .
- * make
- * ./test (to run unit tests)
- * g++ main.cpp Note.cpp Notebook.cpp
- * ./a.out (to run application)
+ * To download and prepare this program, run the following commands on your local machine's command line:
+   * git clone --recursive https://github.com/cs100/final-project-mjain010-dvonr001-dpill001
+   * cmake3 .
+   * make
+ * Now, you may run the program and take any notes you wish. To run the program, make sure you are in the directory that was cloned, and not in src/ or header/. To start the program, run the following command in the command line:
+   *./main
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
- * We have a variety of unit tests that test various member functions used in our program such as get_title() and the constructors. We made sure to test all the possible inputs that the user can enter to ensure functionality.
+ * We have a variety of unit tests that test various member functions used in our program. We made sure to test all the possible inputs that the user can enter to ensure functionality. Possible inputs include invalid notebook and note names, empty notes, notes with a single character, notes with multiple characters/words on a single line, and notes with multiple lines that contain characters/words. We did not use continuous integration (CI) in this project.
