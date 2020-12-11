@@ -37,6 +37,6 @@
    * cmake3 .
    * make
  * Now, you may run the program and take any notes you wish. To run the program, make sure you are in the directory that was cloned, and not in src/ or header/. To start the program, run the following command in the command line:
-   *./main
+   * ./main
  ## Testing
  * We have a variety of unit tests that test various member functions used in our program. We made sure to test all the possible inputs that the user can enter to ensure functionality. Possible inputs include invalid notebook and note names, empty notes, notes with a single character, notes with multiple characters/words on a single line, and notes with multiple lines that contain characters/words. We did not use continuous integration (CI) in this project.
