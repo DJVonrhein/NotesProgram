@@ -14,6 +14,7 @@ using namespace std;
 
 class DisplayWordCount;
 class DisplayNoWordCount;
+
 string notebook_choice_menu();
 void print_menu(string);
 void temp_display_word_count(string);
@@ -64,7 +65,7 @@ int main(){
 			myNotebook->addNote(myNote);
 			   
 
-	 	    	string file_ref = "cd Notefiles && vim " + note_name + ".txt";
+	 	    	string file_ref = "cd src/Notefiles && vim " + note_name + ".txt";
 		    	int status = system(file_ref.c_str());
 		}
 
@@ -139,6 +140,7 @@ string notebook_choice_menu(){ //User inputs the name to their notebook
     int invalid_inputs = 0;
 
     while(1){
+	invalid_inputs = 0;
         cout << "\nTo name your notebook, type \"new <title>\"!\n";
 	cout << "Avoid using spaces or symbols in your title. \n\n";
 
