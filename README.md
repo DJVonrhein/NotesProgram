@@ -22,7 +22,13 @@
 
  ## Screenshots
  > Screenshots of the input/output after running your application
- ![quit input](/screenshot1.png)
+ ![quit input](/images/main.png)
+ ![quit input](/images/beginning.png) 
+ ![quit input](/images/screenshot5.png) 
+ ![quit input](/images/screenshot4.png)  
+ ![quit input](/images/NoteRevert.png) 
+ ![quit input](/images/NoteEdit.png)
+ ![quit input](/images/quit.png)
  * The image above shows how to quit the program. The user interacts with the menu by typing a choice from 1-5; if it is 5 or above it will quit the program, and any other character will not do anything. The program also shows how our program will return an error if the user fails to provide a valid name for the notebook (new <name>).
  * The image above shows various aspects of the program running. For example, we have an option where you make a new Note object within the Notebook and vim edit the txt file that is generated. From there you can select an option displayed in the menu that counts the number of words and characters in the txt file, much like what you use in Google Docs. 
  * The menu displaying every time, along with the up-to-down text display, ensures a simple user interface and that the app stays true to its purpose.
